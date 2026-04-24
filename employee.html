@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let name = document.forms["empForm"]["name"].value;
+            let email = document.forms["empForm"]["email"].value;
+
+            if (name == "" || email == "") {
+                alert("Name and Email must be filled out");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Employee Registration</h2>
+
+    <form name="empForm" onsubmit="return validateForm()">
+        
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter full name">
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter email">
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="Enter phone number">
+
+        <label>Gender</label>
+        <select name="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Department</label>
+        <input type="text" name="department" placeholder="Enter department">
+
+        <label>Position</label>
+        <input type="text" name="position" placeholder="Enter position">
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter password">
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
